@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="http://static.h-ui.net/h-ui.admin/3.1/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="http://static.h-ui.net/www/home/css/H-ui.doc.css" />
+<link rel="stylesheet" type="text/css" href="http://lib.h-ui.net/Hui-iconfont/1.0.8/iconfont.min.css" />
+
+</head>
+<body>
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+        {% for menu in menus %}
+            {% if menu.menuplevel == 0 %}
+                <dl id="{{ forloop.counter }}">
+			        <dt>{{ menu.menuname }}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			        <dd>
+				        <ul>
+                            {% for menu in menus %}
+                                {% if menu.menuplevel == 1 %}
+					                <li><a href="#">
+                                        {{ menu.menuname }}
+                                    </a>
+                                    </li>
+                                {%  endif %}
+                            {% endfor %}
+				        </ul>
+			        </dd>
+                </dl>
+            {% endif %}
+        {% empty %}
+	        <div class="menu_dropdown bk_2">
+		        <ul>
+			        <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;没有可显示的内容</a></li>
+		        </ul>
+	        </div>
+        {% endfor %}
+	</div>
+</aside>
+<script type="text/javascript" src="/static/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/static/lib/respond.min.js"></script>
+<script type="text/javascript" src="/static/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.h-ui.net/h-ui/3.1/js/H-ui.min.js"></script>
+<script type="text/javascript" src="http://static.h-ui.net/www/home/js/H-ui.admin.www.js"></script>
+<script type="text/javascript" src="http://static.h-ui.net/www/home/js/common.js"></script>
+
+</body>
+</html>
