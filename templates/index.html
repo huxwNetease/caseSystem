@@ -1,29 +1,23 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
-<script type="text/javascript" src="/static/lib/html5shiv.js"></script>
-<script type="text/javascript" src="/static/lib/respond.min.js"></script>
-<![endif]-->
 <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="http://static.h-ui.net/h-ui.admin/3.1/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css" href="http://static.h-ui.net/www/home/css/H-ui.doc.css" />
 <link rel="stylesheet" type="text/css" href="http://lib.h-ui.net/Hui-iconfont/1.0.8/iconfont.min.css" />
 
-<script type="text/javascript" src="/static/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://static.h-ui.net/h-ui/3.1/js/H-ui.min.js"></script>
-<script type="text/javascript" src="http://static.h-ui.net/www/home/js/H-ui.admin.www.js"></script>
-<script type="text/javascript" src="http://static.h-ui.net/www/home/js/common.js"></script>
 <title>case管理系统</title>
 </head>
-<body onLoad="prettyPrint()">
+<body>
+
 <header class="navbar-wrapper">
 	<div class="navbar navbar-black">
 		<div class="container-fluid cl"> <a class="logo navbar-logo hidden-xs" href="#">case管理系统</a> <a class="logo navbar-logo-m visible-xs" href="/aboutHui.shtml">H-ui</a>  <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<nav id="Hui-nav" class="nav navbar-nav">
 				<ul class="cl">
-					<li id="Huinav_1"> <button>主页</button> </li>
-					<li id="Huinav_2"> <a href="#">词条</a> </li>
+					<li id="Huinav_1"> <a href="/login/index"><li id="shouye">首页</li></a> </li>
+					<li id="Huinav_2"> <a href="/catalog/index">词条</a> </li>
 					<li id="Huinav_3"> <a href="#">音源</a> </li>
 					<li id="Huinav_4"> <a href="#">图片</a> </li>
 					<li id="Huinav_5"> <a href="#">管理</a> </li>
@@ -32,6 +26,7 @@
 		</div>
 	</div>
 </header>
+
 <aside class="Hui-aside">
 	<input runat="server" id="divScrollValue" type="hidden" value="" />
 	<div class="menu_dropdown bk_2">
@@ -50,13 +45,13 @@
 			<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;example2</a></li>
 		</ul>
 		<ul>
-			<li><a href="/login/words/">example3</a></li>
+			<li><a href="/login/land">example3</a></li>
 		</ul>
 		<dl id="menu_2">
 			<dt>example4<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="words.html">case</a></li>
+					<li><a href="#">case</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -87,12 +82,42 @@
 	</div>
 </aside>
 
-<p class="Hui-article-box">
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a class="maincolor" href="/login/land">首页</a><span class="c-999 en">&gt;</span>基础<span class="c-999 en">&gt;</span><span class="c-666">表格</span></nav>
 
-    hello word123
+    <div class="panel panel-default">
+	    <div class="panel-header">词条概述</div>
+	    <div class="panel-body">
+            内容<br>...<br>...
+        </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+	    <div class="panel-header">图片概述</div>
+	    <div class="panel-body">
+            内容<br>...<br>...
+        </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+	    <div class="panel-header">音源概述</div>
+	    <div class="panel-body">
+            内容<br>...<br>...
+        </div>
+    </div>
+</section>
 
-</p>
+<script type="text/javascript" src="/static/lib/html5shiv.js"></script>
+<script type="text/javascript" src="/static/lib/respond.min.js"></script>
+<script type="text/javascript" src="/static/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.h-ui.net/h-ui/3.1/js/H-ui.min.js"></script>
+<script type="text/javascript" src="http://static.h-ui.net/www/home/js/H-ui.admin.www.js"></script>
+<script type="text/javascript" src="http://static.h-ui.net/www/home/js/common.js"></script>
 
-
+<script>
+    jQuery(function($) {
+         $("#shouye").click();
+     });
+</script>
 </body>
 </html>

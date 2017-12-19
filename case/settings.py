@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
+    'catalog',
 ]
 
 MIDDLEWARE = [
@@ -76,10 +77,17 @@ WSGI_APPLICATION = 'case.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 
+import pymysql         # 一定要添加这两行！通过pip install pymysql！
+pymysql.install_as_MySQLdb()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'case',
+        'HOST': '127.0.0.1',
+        'USER': 'root',
+        'PASSWORD': 'pwd',
+        'PORT': '3306',
     }
 }
 
